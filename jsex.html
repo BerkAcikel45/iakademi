@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS</title>
+        <script src="jsFunctions.js"></script>
+        <script>
+            function calculateSquare(){
+                var name = (document.getElementById("box").value);
+                var lastname
+                var result = inputNumber * inputNumber;
+                document.getElementById('result').innerHTML = result;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" name="qwe">
+        <input name="box" id="box" type="text">
+        <button onclick="calculateSquare()" >Click</button>
+        <b id="result"></b>
+    </body>
+</html>

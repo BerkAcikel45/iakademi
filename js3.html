@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>js</title>
+        <script>
+            function login(){
+                var name = document.getElementById("name").value;
+                var lastname = document.getElementById("lastname").value;
+                if(name == 'Berk' && lastname == 'Açıkel'){
+                    document.getElementById("text").style.color = 'green';
+                    document.getElementById("text").style.border = "5px solid";
+                    document.getElementById("text").style.fontSize = "10px";
+
+                }
+                else{
+                    document.getElementById("text").style.color = 'red';
+                    document.getElementById("text").style.border = "5px solid";
+                    document.getElementById("text").style.fontSize = "30px";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input name="name" id="name" type="text">
+        <input name="lastname" id="lastname" type="text">
+        <button onclick="login()" >Click</button>
+        <p id="text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis at neque, rerum eveniet blanditiis quaerat architecto ipsam aspernatur amet recusandae facere consequatur fugit alias praesentium modi minus esse! Cupiditate, repudiandae.
+        </p>
+    </body>
+</html>

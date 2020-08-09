@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color</title>
+        <script>
+            function changeColor(color){
+                document.getElementById("text").style.color = color;
+                document.getElementById("text").style.border = "5px solid";
+                document.getElementById("text").style.fontSize = "30px";
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            <button id="red" onclick="changeColor('red')">Kırmızı</button>
+            <button id="green"  onclick="changeColor('green')" >Yeşil</button>
+            <button id="blue" onclick="changeColor('blue')">Mavi</button>
+        </p>
+        <p id="text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis at neque, rerum eveniet blanditiis quaerat architecto ipsam aspernatur amet recusandae facere consequatur fugit alias praesentium modi minus esse! Cupiditate, repudiandae.
+        </p>
+    </body>
+</html>
