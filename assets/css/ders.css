@@ -1,0 +1,47 @@
+.img {
+    width: 200px;
+    height: 200px;
+}
+
+#container{
+    background-color: aqua;
+    color: black;
+    margin: 20px;
+    padding: 20px;
+}
+
+#content{
+    background-color: whitesmoke;
+    margin: 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+nav{
+    background-color: red;
+    padding: 10px;
+    color: white;
+    margin: 20px;
+    text-align: center;
+}
+
+footer{
+    background-color: red;
+    color: blue;
+    margin:20px;
+    padding: 10px;
+}
+
+.header-content{
+    margin-top: 20px;
+}
+
+body{
+    background-image: url(../img/background.jpg);
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.header-but{
+    text-decoration: none;
+    color: white;
+}
