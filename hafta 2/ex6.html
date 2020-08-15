@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+
+        <script>
+            function redirecting(id, Address, Second){
+                if(Second == 0){
+                    window.location.href = Address;
+                    return;
+                }
+                document.getElementById(id).innerHTML = Second + " saniye sonra yönlendiriliyorsunuz.";
+                
+                //Second = Second - 1;
+                Second--;
+                
+                setTimeout(function() {
+                    redirecting(id,Address, Second);
+                }, 1000);
+                
+            }
+        </script>
+
+        <div id="warning"></div>
+
+        <script>
+            redirecting("warning", "https://www.iakademi.com/", 15 );
+        </script>
+
+    </body>
+</html>

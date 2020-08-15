@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  
+    </head>
+    <body>
+        <p id="text" style="display: none;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Animi veritatis ipsam facere ipsum rerum harum ea! Similique doloribus cupiditate,
+            quibusdam velit maiores ex aut. Sed beatae perferendis odit autem assumenda.
+        </p>
+        <div id="warning"></div>
+        <script>
+            var name = prompt("İsmin ne");
+
+            if (name == "berk")
+            {
+                alert("Giriş Başarılı");
+                document.getElementById("text").style.display = "block";
+            }
+            else
+            {
+                function redirecting(id, Address, Second){
+                if(Second == 0){
+                    window.location.href = Address;
+                    return;
+                }
+                document.getElementById(id).innerHTML = Second + " saniye sonra yönlendiriliyorsunuz.";
+                
+                //Second = Second - 1;
+                Second--;
+                
+                setTimeout(function() {
+                    redirecting(id,Address, Second);
+                }, 1000);
+                }
+
+                redirecting("warning", "https://www.iakademi.com/", 5 );
+            }
+
+
+        </script>
+    </body>
+</html>

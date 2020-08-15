@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function hideShow(id){
+                var selectTag = document.getElementById(id);
+                var name = prompt("ismin ne");
+                if(selectTag.style.display == "none"){
+                    document.getElementById("button").innerHTML = "Gizle";
+                    selectTag.style.display = "block"
+                }
+                else{
+                    document.getElementById("button").innerHTML = "Göster";
+                    selectTag.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="hideShow('result')" id="button" >Button</button>
+        <p id="result">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Provident maiores ea odio repellat culpa alias eaque! Molestiae 
+            aliquid nesciunt totam doloribus, quae et dolores quam quas tempore omnis, magnam maiores.
+        </p>
+    </body>
+</html>

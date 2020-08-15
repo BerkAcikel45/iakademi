@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <textarea name="textarea" id="message" cols="100" rows="20" maxlength="160"></textarea>
+        <p id="char"></p>
+        <script>
+            var message = document.getElementById('message');
+            var char = document.getElementById('char');
+            var limit = 140;
+            message.onkeyup = charControl;
+            message.onkeydown = charControl;
+            function charControl(){
+                var meslenght = this.value.length;
+                if(limit >= meslenght){
+                    var charNumber = limit - meslenght;
+                    char.innerHTML =  charNumber + " karakter kaldı";
+                }                 
+                else{
+                    alert("Limiti aştın");
+                }
+
+            }
+        </script>
+    </body>
+</html>
