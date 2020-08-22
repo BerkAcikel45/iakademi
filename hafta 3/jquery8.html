@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>       
+         <style>
+            #panel, #start{
+                padding: 10px;
+                text-align: center;
+                background-color: green;
+                border: solid 5px red;
+            }
+
+            #panel{
+                display: none;
+                padding: 60px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <button id="start">start</button>
+        <button id="stop">Stop</button>
+        <div id="panel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum maxime neque error quasi, voluptate hic quas amet magni architecto dolore voluptates deserunt quibusdam, praesentium sint. Vitae modi tenetur quia possimus?</div>
+        <script>
+            $(document).ready(function ()
+            {
+                $("#start").click(function (){
+                    $("#panel").slideDown(4000);
+                });
+
+                $("#stop").click(function (){
+                    $("#panel").stop();
+                });
+            })
+        </script>
+    </body>
+    </html>

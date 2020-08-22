@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+        <style>
+            .ui-widget-content{
+                background-color: darkgoldenrod;
+                border: 1px solid red;
+                color: black;
+            }
+
+            .ui-widget-header{
+                background-color: blue;
+                border: 1px solid white;
+                color: white;
+            }      
+            #resiable{
+                width: 150px;
+                height: 150px;
+                padding: 60px;
+                color:black;
+            }      
+        </style>
+
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <div id="resiable" class="ui-widget-content">
+            <h3 class="ui-widget-header">Resize</h3>
+        </div>
+        <br>
+        <span id="resiable-info"></span>
+        <br>
+        <span id="resiable-detail-info"></span>
+        <script>
+            $(document).ready(function (){
+                $("#resiable").resizable({
+                    
+                    create:function(event,ui){
+                        console.log(event);
+
+                        $("#resiable-info").text("created..");
+                    },
+
+                    resize:function(event, ui){
+                        $("#resiable-detail-info").text(
+                            "top = " + ui.position.top +
+                            ", left = " + ui.position.left +
+                            ", width = " + ui.size.width +
+                            ", height = " + ui.size.height
+                         )
+                    }
+                })
+
+            })
+        </script>
+    </body>
+</html>
