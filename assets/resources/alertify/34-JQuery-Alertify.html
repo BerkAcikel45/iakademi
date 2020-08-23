@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="alertify.core.css">
+    <link rel="stylesheet" href="alertify.default.css" id="toggleCSS">
+</head>
+<body>
+<h2>Alertify</h2>
+<a href="#" id="alert">Alert Dialog</a>
+<br>
+<a href="#" id="confirm">Confirm Dialog</a>
+<br>
+<a href="#" id="prompt">Prompt Dialog</a>
+<br>
+<a href="#" id="labels">Custom Labels</a>
+<br>
+<a href="#" id="focus">Button Focus</a>
+<br>
+<a href="#" id="order">Button Order</a>
+<h2>AJAX</h2>
+<a href="#" id="ajax">Ajax - Multiple Dialog</a>
+<h3>Logs</h3>
+<a href="#" id="notification">Standard logs</a>
+<h3>Log success</h3>
+<a href="#" id="success">Success logs</a>
+<h3>Error Log success</h3>
+<a href="#" id="error">Error logs</a>
+<h3>Delay Log </h3>
+<a href="#" id="delay">Delay logs</a>
+
+<h3>Forever Log</h3>
+<a href="#" id="forever">Persisitive Log - Tıklanmadıkça kalır</a>
+
+<script type="text/javascript" src="alertify.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    function reset() {
+        $("#toggleCSS").attr("href","alertify.default.css");
+        alertify.set({
+           labels:{
+               ok:  "OK",
+               cancel: "CANCEL"
+           },
+            delay:5000,
+            buttonReverse: false,
+            buttonFocus: "ok",
+
+        });
+    }
+
+    $("#alert").on("click",function(){
+        reset();
+        alertify.alert("Alert Dialog");
+    });
+
+    $("#confirm").on("click", function () {
+        reset();
+        alertify.confirm("Confirm Dialog", function (e) {
+            console.log(e);
+            //e true - OK, false - Cancel
+            if (e){
+                alertify.success("Successful Confirm");
+            }
+            else{
+                alertify.error("Cancel is selected");
+            }
+        });
+    });
+    $("#prompt").on("click",function(){
+        reset();
+        //promt error ve string alır. error true/false, str ise yazdırılacak mesaj
+        alertify.prompt("Prompt Dialog",function (e, str) {
+            if (e){
+                alertify.success("Prompt content: " + str);
+            }
+            else{
+                alertify.error("You have clicked cancel");
+            }
+        }, "Placeholder area");
+    });
+
+    $("#labels").on("click",function(){
+        //diğer alertleri etkilememsi için resetlemek gerekiyor
+        reset();
+        // alert initialize {}
+        alertify.set({
+            labels:{
+                ok:"Accept",
+                cancel:"Deny"
+            }
+        });
+        alertify.confirm("Confirm dialog", function (e) {
+            if (e){
+                alertify.success("Successful Confirm");
+            }
+            else{
+                alertify.error("Cancel is selected");
+            }
+        })
+    });
+
+    $("#focus").on("click", function () {
+       reset();
+       alertify.set({
+           buttonFocus: "cancel"
+       });
+
+       alertify.confirm("Dialog with focus", function (e) {
+           // e içinde true/false tutar
+           if (e){
+               alertify.success("Successful Confirm");
+           }
+           else{
+               alertify.error("Cancel is selected");
+           }
+           //space tuşuna basınca cancel yerine OK seçiliyor? İncele!!!!!!!!!!!!!!!!!
+       })
+    });
+
+    $("#order").on("click", function () {
+       reset();
+       alertify.set({
+           //buttonReverse true - ok/cancel yerini değiştirir
+           buttonReverse: true,
+       })
+        alertify.confirm("Confirm dialog with button reverse",function (e) {
+            if (e){
+                alertify.success("Successful Confirm");
+            }
+            else{
+                alertify.error("Cancel is selected");
+            }
+        })
+    });
+
+    $("#ajax").on("click",function () {
+       reset();
+        alertify.confirm("Confirm dialog with button reverse",function (e) {
+            if (e){
+                alertify.alert("Successful AJAX Confirm (not real ajax :)");
+            }
+            else{
+                alertify.alert("Cancel is selected");
+            }
+        })
+    });
+
+    $("#notification").on("click",function () {
+        reset();
+        alertify.log("Standard log message");
+    });
+
+    $("#success").on("click", function () {
+        reset();
+        alertify.success("Success log message");
+    })
+
+    $("#error").on("click", function () {
+        reset();
+        alertify.error("Error log message");
+    })
+
+    $("#delay").on("click", function () {
+      reset();
+      alertify.set({delay:3000});
+      alertify.log("Hiding in 3 seconds");
+    });
+
+    $("#forever").on("click", function () {
+        reset();
+        alertify.log("Persistive log", "", 0);
+    })
+</script>
+</body>
+</html>

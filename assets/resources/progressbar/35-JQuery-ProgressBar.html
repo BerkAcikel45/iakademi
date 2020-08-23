@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" type="text/css" href="jQuery-plugin-progressbar.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="jQuery-plugin-progressbar.js"></script>
+</head>
+<body>
+<div class="progress-bar position"></div> <!--hiç değer yazılmaz ise default değerleri ile gelir %75-->
+<div class="progress-bar position" data-percent="40" data-duration="1000" data-color="#ccc, yellow"></div>
+<div class="progress-bar position" data-percent="90" data-duration="3000" data-color="#ccc, red"></div>
+<input type="submit" value="Reload">
+<script>
+    $(document).ready(function () {
+        $(".progress-bar").loading();
+        $("input").on("click", function () {
+            $(".progress-bar").loading();
+        });
+    });
+</script>
+</body>
+</html>
