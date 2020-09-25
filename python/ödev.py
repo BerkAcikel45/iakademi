@@ -40,8 +40,22 @@ class Register:
 
 
 def menu():
-    selection = input("Select action")
-    print(selection)
+    print("""Please select action from menu:
+    1)  Create Student
+    2)  Display Students
+    3)  AddCourses
+    4)  DropCourses
+    5)  DisplayCourses
+    6)  CreateNewCourse
+    7)  ModifyCourse 
+    8)  RemoveCourse
+    9)  SelectCoursesToTeach
+    10) ViewRegisteredCourses
+    11) ViewCourseOfferingRoster
+    12) Exit""")
+    selection = input("Select action: ")
+
+
     return selection
 selection = menu()
 a = Register()
