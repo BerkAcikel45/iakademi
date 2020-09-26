@@ -41,3 +41,8 @@ while selection != 12:
         courseCode = input("Hangi kursu değiştrimek istiyorsanız kodunu giriniz")
         a.modifyCourse(courseCode)
         selection = menu()
+
+    if selection == "8":
+        courseCode = input("Hangi kursu silmek istiyorsanız kodunu giriniz")
+        a.removeCourse(courseCode)
+        selection = menu()

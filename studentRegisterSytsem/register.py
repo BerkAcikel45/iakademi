@@ -69,5 +69,9 @@ class Register:
                 print(f'Yeni kurs kodu: {data.courseCode}  yeni kurs ismi: {data.courseName} yeni kurs başlangıç tarihi:{data.courseStartDate} yeni kurs bitiş tarihi: {data.courseEndDate} yeni kurs fakulte kodu: {data.facultyCode} ')
                 break
 
-
-
+    def removeCourse(self, courseCode):
+        for item in self.courseList:
+            if item.courseCode == courseCode:
+                print(f'{item.courseName} isimli kurs silindi')
+                self.courseList.pop(item)
+                break
