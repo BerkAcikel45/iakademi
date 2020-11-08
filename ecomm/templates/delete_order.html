@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body">
+                <p>Do you confirm to delete {{order.name}} ?</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <a class="btn btn-warning" href="{% url 'home' %}">Cancel</a>
+                    <input class="btn btn-warning" type="submit" name="Confirm" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

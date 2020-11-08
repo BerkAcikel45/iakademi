@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Ecommerce</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+      </span>
+    </button>
+    <a class="navbar-brand" href="{% url 'home' %}"><img style="width:50px" src="data:image/png;base64,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"></a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">Account</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'signOut' %}">Sign Out</a>
+      </form>
+    </div>
+  </nav>
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
